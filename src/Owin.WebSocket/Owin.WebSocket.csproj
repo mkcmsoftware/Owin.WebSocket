@@ -66,7 +66,7 @@
       <Version>2.0.5</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Owin">
-      <Version>4.1.0</Version>
+      <Version>4.1.1</Version>
     </PackageReference>
     <PackageReference Include="System.Net.WebSockets">
       <Version>4.3.0</Version>
