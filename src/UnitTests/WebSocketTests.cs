@@ -9,7 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Owin;
 using Microsoft.Owin.Hosting;
-using Microsoft.Practices.ServiceLocation;
+using CommonServiceLocator;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Owin.WebSocket;
 using Owin.WebSocket.Extensions;
@@ -219,7 +219,8 @@ namespace UnitTests
         {
             var client = new WebClient();
             var t = new Action(() => client.OpenRead("http://localhost:8989/ws"));
-            var ex = t.ShouldThrow<WebException>().Which;
+            
+            var ex = t.Should().Throw<WebException>().Which;
             (((HttpWebResponse) (ex.Response)).StatusCode).Should().Be(HttpStatusCode.BadRequest);
         }
 
